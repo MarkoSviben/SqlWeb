@@ -11,10 +11,10 @@ url = urllib.parse.urlparse(EXTERNAL_DATABASE_URL)
 
 DB_CONFIG = {
     'host': url.hostname,
-    'database': url.path[1:],  # Uklonite početni '/'
+    'database': url.path[1:],  
     'user': url.username,
     'password': url.password,
-    'port': url.port or 5432  # Postavite na 5432 ako port nije specificiran
+    'port': url.port or 5432  
 }
 
 def get_db_connection():
@@ -25,7 +25,6 @@ def get_db_connection():
             user=DB_CONFIG['user'],
             password=DB_CONFIG['password'],
             port=DB_CONFIG['port'],
-            sslmode='require'  # Dodajte ovu liniju za SSL
         )
         return conn
     except OperationalError as e:
@@ -60,10 +59,10 @@ def login():
                             message = 'Neispravno korisničko ime ili lozinka.'
                     else:
                         query = "SELECT * FROM users WHERE username = %s AND password = %s"
-                        print(f"Siguran Upit: {query} | Parametri: ({username}, {password})")  # Debug linija
+                        print(f"Siguran Upit: {query} | Parametri: ({username}, {password})")  
                         cursor.execute(query, (username, password))
                         result = cursor.fetchone()
-                        print(f"Rezultat: {result}")  # Debug linija
+                        print(f"Rezultat: {result}") 
                         if result:
                             message = 'Uspješno ste prijavljeni! (Siguran način)'
                         else:
