@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    text-align: center;
+}
+form {
+    display: inline-block;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+label {
+    display: block;
+    margin: 10px 0 5px;
+    text-align: left;
+}
+input[type="text"],
+input[type="password"] {
+    padding: 5px;
+    width: 200px;
+}
+input[type="checkbox"] {
+    margin-top: 10px;
+}
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+}
+p {
+    margin-top: 20px;
+}

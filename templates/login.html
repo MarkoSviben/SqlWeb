@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Stranica</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Prijava</h1>
+    <form method="POST">
+        <label for="username">Korisničko ime:</label>
+        <input type="text" id="username" name="username" required><br>
+        <label for="password">Lozinka:</label>
+        <input type="password" id="password" name="password" required><br>
+        <input type="checkbox" id="vulnerable" name="vulnerable" {% if is_vulnerable %}checked{% endif %}>
+        <label for="vulnerable">Omogući SQL injekciju</label><br>
+        <button type="submit">Prijava</button>
+    </form>
+    <p>{{ message }}</p>
+</body>
+</html>
